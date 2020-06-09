@@ -91,15 +91,17 @@ python -m scripts.eval_baseline_methods --traffic_reading_filename=data/metr-la.
 More details are being added ...
 
 ## !! Update with my experiments' results
-All of experiments' results are in folder data/model/
+All of experiments' results are in folder `data/model/`
 
-Folder structure: data_[DR: dual_random_walk filter, R: random_walk filter, L: laplacian filter, I: identity filter]\_h\_[horizon, default = 12]_...
+Folder structure: `data_[DR: dual_random_walk filter, R: random_walk filter, L: laplacian filter, I: identity filter]_h_[horizon, default = 12]_...`
 
-In each folder, see the model hyperparameters and training configuration in file .yaml which also has the trained model checkpoint for testing.
+In each folder, see the model hyperparameters and training configuration in file `.yaml` which also has the trained model checkpoint for testing.
+
+The experiments' results with testing data are in `info.log` file in each training folder. You can see the comparison results in my Presentation file!
 
 ## !! Update with a crowd flow dataset - Beijing taxi trajectories in 2014
-Folder beijing2014 with 2 files: 
-- taxi_flow.csv: The data of outflow and inflow of each taxi for each region at each timestamp
+Folder `data/beijing2014` with 2 files: 
+- `taxi_flow.csv`: The data of outflow and inflow of each taxi for each region at each timestamp
 
 Example data:
 ```
@@ -108,7 +110,7 @@ Example data:
   2    2      1       0      6
   3    3      1       1      3
 ```
-- taxi_timemap.csv: The mapping from each timestamp to real time, as well as dayinweek, hourinday, hourinweek, and the week since the begining of the dataset.
+- `taxi_timemap.csv`: The mapping from each timestamp to real time, as well as dayinweek, hourinday, hourinweek, and the week since the begining of the dataset.
 Note that dayinweek is denoted as follows:
 ```Mon -> Friday: 1 -> 5
 Saturday: 6
