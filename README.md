@@ -92,28 +92,37 @@ More details are being added ...
 
 ## !! Update with my experiments' results
 All of experiments' results are in folder data/model/
-Folder structure: data_[DR: dual_random_walk filter, R: random_walk filter, L: laplacian filter, I: identity filter]_h_[horizon, default = 12]_...
+
+Folder structure: data_[DR: dual_random_walk filter, R: random_walk filter, L: laplacian filter, I: identity filter]\_h\_[horizon, default = 12]_...
+
 In each folder, see the model hyperparameters and training configuration in file .yaml which also has the trained model checkpoint for testing.
 
 ## !! Update with a crowd flow dataset - Beijing taxi trajectories in 2014
 Folder beijing2014 with 2 files: 
 - taxi_flow.csv: The data of outflow and inflow of each taxi for each region at each timestamp
+
 Example data:
+```
       time region outflow inflow
   1    1      1       3      2
   2    2      1       0      6
   3    3      1       1      3
+```
 - taxi_timemap.csv: The mapping from each timestamp to real time, as well as dayinweek, hourinday, hourinweek, and the week since the begining of the dataset.
 Note that dayinweek is denoted as follows:
-Mon -> Friday: 1 -> 5
+```Mon -> Friday: 1 -> 5
 Saturday: 6
 Sunday: 7
+```
+
 Example data:
+```
     time            datetime dayinweek hourinday hourinweek week
   1    1 2014-04-01 00:00:00         2         1         25    0
   2    2 2014-04-01 01:00:00         2         2         26    0
   3    3 2014-04-01 02:00:00         2         3         27    0
   4    4 2014-04-01 03:00:00         2         4         28    0
+```
 
 ## Deploying DCRNN on Large Graphs with graph partitioning
 
