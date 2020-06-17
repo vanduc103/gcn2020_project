@@ -58,18 +58,6 @@ python -m scripts.gen_adj_mx  --sensor_ids_filename=data/sensor_graph/graph_sens
 ```
 Besides, the locations of sensors in Los Angeles, i.e., METR-LA, are available at [data/sensor_graph/graph_sensor_locations.csv](https://github.com/liyaguang/DCRNN/blob/master/data/sensor_graph/graph_sensor_locations.csv), and the locations of sensors in PEMS-BAY are available at [data/sensor_graph/graph_sensor_locations_bay.csv](https://github.com/liyaguang/DCRNN/blob/master/data/sensor_graph/graph_sensor_locations_bay.csv).
 
-## Run the Pre-trained Model on METR-LA
-
-```bash
-# METR-LA
-python run_demo.py --config_filename=data/model/pretrained/METR-LA/config.yaml
-
-# PEMS-BAY
-python run_demo.py --config_filename=data/model/pretrained/PEMS-BAY/config.yaml
-```
-The generated prediction of DCRNN is in `data/results/dcrnn_predictions`.
-
-
 ## Model Training
 ```bash
 # METR-LA
@@ -90,7 +78,7 @@ python -m scripts.eval_baseline_methods --traffic_reading_filename=data/metr-la.
 ```
 More details are being added ...
 
-## !! Update with my experiments' results
+## !! Update with my experiments' results (on METR-LA dataset)
 All of experiments' results are in folder `data/model/`
 
 Folder structure: `data_[DR: dual_random_walk filter, R: random_walk filter, L: laplacian filter, I: identity filter]_h_[horizon, default = 12]_...`
@@ -98,6 +86,17 @@ Folder structure: `data_[DR: dual_random_walk filter, R: random_walk filter, L: 
 In each folder, see the model hyperparameters and training configuration in file `.yaml` which also has the trained model checkpoint for testing.
 
 The experiments' results with testing data are in `info.log` file in each training folder. You can see the comparison results in my Presentation file!
+
+## Run the Pre-trained Model on METR-LA
+
+```bash
+# METR-LA
+python run_demo.py --config_filename=data/model/pretrained/METR-LA/config.yaml
+
+# PEMS-BAY
+python run_demo.py --config_filename=data/model/pretrained/PEMS-BAY/config.yaml
+```
+The generated prediction of DCRNN is in `data/results/dcrnn_predictions`.
 
 ## !! Update with a crowd flow dataset - Beijing taxi trajectories in 2014
 Folder `data/beijing2014` with 2 files: 
