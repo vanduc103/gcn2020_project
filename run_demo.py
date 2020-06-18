@@ -13,9 +13,9 @@ def run_dcrnn(args):
     with open(args.config_filename) as f:
         config = yaml.load(f)
     tf_config = tf.ConfigProto()
-    if args.use_cpu_only:
+    if not args.use_cpu_only:
         tf_config = tf.ConfigProto(device_count={'GPU': 0})
-    tf_config.gpu_options.allow_growth = True
+        tf_config.gpu_options.allow_growth = True
     graph_pkl_filename = config['data']['graph_pkl_filename']
     _, _, adj_mx = load_graph_data(graph_pkl_filename)
     with tf.Session(config=tf_config) as sess:

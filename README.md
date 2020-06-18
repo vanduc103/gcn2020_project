@@ -87,16 +87,14 @@ In each folder, see the model hyperparameters and training configuration in file
 
 The experiments' results with testing data are in `info.log` file in each training folder. You can see the comparison results in my Presentation file!
 
-## Run the Pre-trained Model on METR-LA
+## Run the Pre-trained Model (example with 1 pre-trained model)
 
 ```bash
 # METR-LA
-python run_demo.py --config_filename=data/model/pretrained/METR-LA/config.yaml
+python run_demo.py --config_filename=data/model/dcrnn_DR_1_h_12_64-64_lr_0.01_bs_64_0527211535/config_100.yaml
 
-# PEMS-BAY
-python run_demo.py --config_filename=data/model/pretrained/PEMS-BAY/config.yaml
 ```
-The generated prediction of DCRNN is in `data/results/dcrnn_predictions`.
+The generated prediction of DCRNN is in `data/results/dcrnn_predictions` and can be viewed in the file `log.info`.
 
 ## !! Update with a crowd flow dataset - Beijing taxi trajectories in 2014
 Folder `data/beijing2014` with 2 files: 
